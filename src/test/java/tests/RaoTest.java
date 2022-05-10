@@ -1,12 +1,23 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import pages.RuRegistryPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RaoTest {
+
+    RuRegistryPage ruRegistryPage = new RuRegistryPage();
+
+    String
+            work = "ШТИЛЬ",
+            work1 = "15 лет",
+            author = "Дубинин",
+            value = "ШТИЛЬ",
+            author1 = "КИПЕЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ";
+
 
     @Test
     void homePageTest(){
@@ -23,26 +34,26 @@ public class RaoTest {
 
     @Test
     void russianRegistrySearchWorkAuthorTest(){
-        open("https://rao.ru/information/reestry/reestr-proizvedenij-rossijskih-pravoobladatelej/");
-        $("[name=work]").setValue("ШТИЛЬ");
-        $("[name=author]").setValue("Дубинин");
-        $(".search-reestr").click();
-        $(".search-result-reestr").shouldHave(text("ШТИЛЬ"));
+        ruRegistryPage.openPage()
+                .setWork(work)
+                .setAuthor(author)
+                .submitClick()
+                .checkForm(value);
     }
 
     @Test
     void russianRegistrySearchWorkTest(){
-        open("https://rao.ru/information/reestry/reestr-proizvedenij-rossijskih-pravoobladatelej/");
-        $("[name=work]").setValue("15 лет");
-        $(".search-reestr").click();
-        $(".search-result-reestr").shouldHave(text("15 лет"));
+        ruRegistryPage.openPage()
+                .setWork(work1)
+                .submitClick()
+                .checkForm(work1);
     }
 
     @Test
     void russianRegistrySearchAuthorTest(){
-        open("https://rao.ru/information/reestry/reestr-proizvedenij-rossijskih-pravoobladatelej/");
-        $("[name=author]").setValue("КИПЕЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ");
-        $(".search-reestr").click();
-        $(".search-result-reestr").shouldHave(text("ВОЗЬМИ МОЕ СЕРДЦЕ"));
+        ruRegistryPage.openPage()
+                .setAuthor(author1)
+                .submitClick()
+                .checkForm(author1);
     }
 }
