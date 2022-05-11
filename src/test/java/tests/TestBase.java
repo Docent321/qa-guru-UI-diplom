@@ -24,7 +24,7 @@ public class TestBase {
     public void tearDown() {
         String sessionId = DriverUtils.getSessionId();
 
-        AllureAttachments.addScreenshotAs("Last screenshot");
+//        AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
         AllureAttachments.addBrowserConsoleLogs();
         Selenide.closeWebDriver();
