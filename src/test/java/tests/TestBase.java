@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.Credentials;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -25,13 +26,13 @@ public class TestBase {
         //password and user for remote browser
 //        String user = Credentials.config.user();
 //        String password = Credentials.config.password();
-//        String remoteUrl = Credentials.config.remoteUrl();
+        String remoteUrl = Credentials.config.remoteUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-//        Configuration.remote = "https://" + user + ":" + password + "@" + remoteUrl;
+        Configuration.remote = remoteUrl;
 
         SelenideLogger.addListener("allure", new AllureSelenide());
     }

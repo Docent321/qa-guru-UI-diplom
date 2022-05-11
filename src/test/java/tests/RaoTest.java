@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static testData.TestData.*;
 
-public class RaoTest {
+public class RaoTest extends TestBase{
 
     RuRegistryPage ruRegistryPage = new RuRegistryPage();
 
@@ -19,13 +19,13 @@ public class RaoTest {
     @Test
     void homePageTest(){
         step("Открыть главную страницу", () -> {
-            open("https://rao.ru/");
+            open(baseUrl);
         });
         step("Проверить наличие надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО в хедере", () -> {
             $(".logo-section").shouldHave(text("РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО"));
         });
     }
-
+/*
     @DisplayName("Переход в раздел Новости")
     @Test
     void newsRaoTest(){
@@ -39,7 +39,7 @@ public class RaoTest {
             $(".news-page").shouldHave(text("НОВОСТИ"));
         });
     }
-
+*/
     @DisplayName("Поиск в реестре по автору и произведению")
     @Test
     void russianRegistrySearchWorkAuthorTest(){
@@ -59,7 +59,7 @@ public class RaoTest {
             ruRegistryPage.checkForm(value);
         });
     }
-
+/*
     @DisplayName("Поиск в реестре по произведению")
     @Test
     void russianRegistrySearchWorkTest(){
@@ -93,4 +93,6 @@ public class RaoTest {
             ruRegistryPage.checkForm(author1);
         });
     }
+
+ */
 }
