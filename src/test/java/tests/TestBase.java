@@ -10,6 +10,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.sleep;
+
 
 public class TestBase {
 
@@ -19,12 +22,21 @@ public class TestBase {
         DriverConfig.configure();
     }
 
-
+    @AfterEach
+    void addAttachments() {
+        AllureAttachments.screenshotAs("Скриншот");
+        AllureAttachments.pageSource();
+        AllureAttachments.browserConsoleLogs();
+        AllureAttachments.addVideo();
+        sleep(5000);
+        closeWebDriver();
+    }
+/*
     @AfterEach
     public void tearDown() {
         String sessionId = DriverUtils.getSessionId();
 
-//        AllureAttachments.addScreenshotAs("Last screenshot");
+        AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
         AllureAttachments.addBrowserConsoleLogs();
         Selenide.closeWebDriver();
@@ -33,4 +45,6 @@ public class TestBase {
             AllureAttachments.addVideo(sessionId);
         }
     }
+
+ */
 }
