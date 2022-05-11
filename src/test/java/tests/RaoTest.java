@@ -1,62 +1,96 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.RuRegistryPage;
-import testData.TestData;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 import static testData.TestData.*;
 
 public class RaoTest {
 
     RuRegistryPage ruRegistryPage = new RuRegistryPage();
-    TestData testData = new TestData();
-/*
-    String
-            work = "ШТИЛЬ",
-            work1 = "15 лет",
-            author = "Дубинин",
-            value = "ШТИЛЬ",
-            author1 = "КИПЕЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ";
-*/
 
+    @DisplayName("Главная страница")
     @Test
     void homePageTest(){
-        open("https://rao.ru/");
-        $(".logo-section").shouldHave(text("РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО"));
+        step("Открыть главную страницу", () -> {
+            open("https://rao.ru/");
+        });
+        step("Проверить наличие надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО в хедере", () -> {
+            $(".logo-section").shouldHave(text("РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО"));
+        });
     }
 
+    @DisplayName("Переход в раздел Новости")
     @Test
     void newsRaoTest(){
-        open("https://rao.ru/");
-        $("#menu-item-4955").click();
-        $(".news-page").shouldHave(text("НОВОСТИ"));
+        step("Открыть главную страницу", () -> {
+            open("https://rao.ru/");
+        });
+        step("Кликнуть на кнопку Каталог", () -> {
+            $("#menu-item-4955").click();
+        });
+        step("Проверить что нахожусь на странице Новости", () -> {
+            $(".news-page").shouldHave(text("НОВОСТИ"));
+        });
     }
 
+    @DisplayName("Поиск в реестре по автору и произведению")
     @Test
     void russianRegistrySearchWorkAuthorTest(){
-        ruRegistryPage.openPage()
-                .setWork(work)
-                .setAuthor(author)
-                .submitClick()
-                .checkForm(value);
+        step("Открыть страницу Российского реестра произведений", () -> {
+            ruRegistryPage.openPage();
+        });
+        step("В поле Произведение ввести название произведения", () -> {
+            ruRegistryPage.setWork(work);
+        });
+        step("В поле Автор ввести ФИО фвтора", () -> {
+            ruRegistryPage.setAuthor(author);
+        });
+        step("Нажать кнопку Поиск", () -> {
+            ruRegistryPage.submitClick();
+        });
+        step("Проверить нахождение произведения в результатах поиска", () -> {
+            ruRegistryPage.checkForm(value);
+        });
     }
 
+    @DisplayName("Поиск в реестре по произведению")
     @Test
     void russianRegistrySearchWorkTest(){
-        ruRegistryPage.openPage()
-                .setWork(work1)
-                .submitClick()
-                .checkForm(work1);
+        step("Открыть страницу Российского реестра произведений", () -> {
+            ruRegistryPage.openPage();
+        });
+        step("В поле Произведение ввести название произведения", () -> {
+            ruRegistryPage.setWork(work1);
+        });
+        step("Нажать кнопку Поиск", () -> {
+            ruRegistryPage.submitClick();
+        });
+        step("Проверить нахождение произведения в результатах поиска", () -> {
+            ruRegistryPage.checkForm(work1);
+        });
     }
 
+    @DisplayName("Поиск в реестре по автору")
     @Test
     void russianRegistrySearchAuthorTest(){
-        ruRegistryPage.openPage()
-                .setAuthor(author1)
-                .submitClick()
-                .checkForm(author1);
+        step("Открыть страницу Российского реестра произведений", () -> {
+            ruRegistryPage.openPage();
+        });
+        step("В поле Автор ввести ФИО фвтора", () -> {
+            ruRegistryPage.setAuthor(author1);
+        });
+        step("Нажать кнопку Поиск", () -> {
+            ruRegistryPage.submitClick();
+        });
+        step("Проверить нахождение Автора в результатах поиска", () -> {
+            ruRegistryPage.checkForm(author1);
+        });
     }
 }
