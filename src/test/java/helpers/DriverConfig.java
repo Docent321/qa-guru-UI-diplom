@@ -1,7 +1,6 @@
 package helpers;
 
 import com.codeborne.selenide.Configuration;
-
 import config.Project;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;

@@ -32,7 +32,7 @@ public class RaoTest extends TestBase{
             open("https://rao.ru/");
         });
         step("Нажать на кнопку Каталог", () -> {
-            $("#menu-item-4955").click();
+            $(".menu-item-4955").click();
         });
         step("Проверить что нахожусь на странице Новости", () -> {
             $(".news-page").shouldHave(text("НОВОСТИ"));
