@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import pages.RuRegistryPage;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static testData.TestData.*;
 
@@ -31,6 +30,7 @@ public class RaoTest extends TestBase{
         step("Открыть главную страницу", () -> {
             open("https://rao.ru/");
         });
+        sleep(5000);
         step("Нажать на кнопку Каталог", () -> {
             $(".menu-item-4955").click();
         });
