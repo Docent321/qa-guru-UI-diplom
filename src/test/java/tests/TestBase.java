@@ -16,8 +16,8 @@ public class TestBase {
 
 
     @BeforeAll
-    static void beforeAll() {;
-        Configuration.baseUrl = "https://rao.ru/";
+    static void beforeAll() {
+        Configuration.baseUrl = System.getProperty("https://rao.ru/");
         Configuration.browserSize = System.getProperty("size", "1920x1080");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.pageLoadTimeout = 80000;
