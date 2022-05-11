@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import pages.RuRegistryPage;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -19,13 +18,13 @@ public class RaoTest extends TestBase{
     @Test
     void homePageTest(){
         step("Открыть главную страницу", () -> {
-            open(baseUrl);
+            open("https://www.rao.ru/");
         });
         step("Проверить наличие надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО в хедере", () -> {
             $(".logo-section").shouldHave(text("РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО"));
         });
     }
-/*
+
     @DisplayName("Переход в раздел Новости")
     @Test
     void newsRaoTest(){
@@ -39,7 +38,7 @@ public class RaoTest extends TestBase{
             $(".news-page").shouldHave(text("НОВОСТИ"));
         });
     }
-*/
+
     @DisplayName("Поиск в реестре по автору и произведению")
     @Test
     void russianRegistrySearchWorkAuthorTest(){
@@ -59,7 +58,7 @@ public class RaoTest extends TestBase{
             ruRegistryPage.checkForm(value);
         });
     }
-/*
+
     @DisplayName("Поиск в реестре по произведению")
     @Test
     void russianRegistrySearchWorkTest(){
@@ -93,6 +92,4 @@ public class RaoTest extends TestBase{
             ruRegistryPage.checkForm(author1);
         });
     }
-
- */
 }

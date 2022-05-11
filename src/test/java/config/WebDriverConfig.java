@@ -2,15 +2,9 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+
 @Config.Sources({"classpath:${type}.properties"})
-
-public interface  CredentialsConfig extends Config {
-
-    @Key("user")
-    String user();
-
-    @Key("password")
-    String password();
+public interface WebDriverConfig extends Config {
 
     @Key("browserName")
     String browserName();
@@ -32,4 +26,5 @@ public interface  CredentialsConfig extends Config {
 
     @Key("timeout")
     int timeout();
+
 }
