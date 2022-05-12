@@ -8,7 +8,6 @@ import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-
 public class DriverConfig {
 
     public static void configure() {

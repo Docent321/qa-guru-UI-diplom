@@ -33,7 +33,6 @@ public class RaoTest extends TestBase{
         step("Открыть главную страницу", () -> {
             mainPage.openMainPage();
         });
-        sleep(5000);
         step("Нажать на кнопку Каталог", () -> {
             mainPage.submitNews();
         });

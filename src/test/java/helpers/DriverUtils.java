@@ -1,6 +1,5 @@
 package helpers;
 
-
 import com.codeborne.selenide.Selenide;
 import config.Project;
 import org.openqa.selenium.OutputType;
