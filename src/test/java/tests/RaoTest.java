@@ -2,9 +2,10 @@ package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.MainPage;
+import pages.NewsPage;
 import pages.RuRegistryPage;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static testData.TestData.*;
@@ -12,15 +13,17 @@ import static testData.TestData.*;
 public class RaoTest extends TestBase{
 
     RuRegistryPage ruRegistryPage = new RuRegistryPage();
+    MainPage mainPage = new MainPage();
+    NewsPage newsPage = new NewsPage();
 
     @DisplayName("Главная страница")
     @Test
-    void homePageTest(){
+    void homePagePOTest(){
         step("Открыть главную страницу", () -> {
-            open("https://www.rao.ru/");
+            mainPage.openMainPage();
         });
         step("Проверить наличие надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО в хедере", () -> {
-            $(".logo-section").shouldHave(text("РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО"));
+            mainPage.checkRao(logo);
         });
     }
 
@@ -28,14 +31,14 @@ public class RaoTest extends TestBase{
     @Test
     void newsRaoTest(){
         step("Открыть главную страницу", () -> {
-            open("https://rao.ru/");
+            mainPage.openMainPage();
         });
         sleep(5000);
         step("Нажать на кнопку Каталог", () -> {
-            $(".menu-item-4955").click();
+            mainPage.submitNews();
         });
         step("Проверить что нахожусь на странице Новости", () -> {
-            $(".news-page").shouldHave(text("НОВОСТИ"));
+            newsPage.checkNews(news);
         });
     }
 
