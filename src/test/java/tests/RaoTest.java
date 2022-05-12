@@ -1,6 +1,8 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.NewsPage;
@@ -16,6 +18,8 @@ public class RaoTest extends TestBase{
     MainPage mainPage = new MainPage();
     NewsPage newsPage = new NewsPage();
 
+    @Tag("web")
+    @Owner("AlexDonskov")
     @DisplayName("Главная страница")
     @Test
     void homePagePOTest(){
@@ -27,6 +31,8 @@ public class RaoTest extends TestBase{
         });
     }
 
+    @Tag("web")
+    @Owner("AlexDonskov")
     @DisplayName("Переход в раздел Новости")
     @Test
     void newsRaoTest(){
@@ -41,6 +47,8 @@ public class RaoTest extends TestBase{
         });
     }
 
+    @Tag("web")
+    @Owner("AlexDonskov")
     @DisplayName("Поиск в реестре по автору и произведению")
     @Test
     void russianRegistrySearchWorkAuthorTest(){
@@ -61,6 +69,8 @@ public class RaoTest extends TestBase{
         });
     }
 
+    @Tag("web")
+    @Owner("AlexDonskov")
     @DisplayName("Поиск в реестре по произведению")
     @Test
     void russianRegistrySearchWorkTest(){
@@ -78,6 +88,8 @@ public class RaoTest extends TestBase{
         });
     }
 
+    @Tag("web")
+    @Owner("AlexDonskov")
     @DisplayName("Поиск в реестре по автору")
     @Test
     void russianRegistrySearchAuthorTest(){
