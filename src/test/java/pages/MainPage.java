@@ -13,7 +13,6 @@ public class MainPage {
             result = $(".logo-section"),
             submitnews = $(".menu-item-4955");
 
-
     public MainPage openPage() {
         open("https://www.rao.ru/");
         return this;
@@ -25,7 +24,8 @@ public class MainPage {
     }
 
     public MainPage submitNews() {
-        submitnews.click();;
+        submitnews.click();
+        ;
         return this;
     }
 }

@@ -2,6 +2,7 @@ package config;
 
 import org.aeonbits.owner.ConfigFactory;
 
+
 public class Project {
     public static WebDriverConfig webConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
@@ -16,5 +17,4 @@ public class Project {
     public static String browserName() {
         return webConfig.browserName();
     }
-
 }

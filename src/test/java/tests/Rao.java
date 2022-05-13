@@ -14,7 +14,7 @@ public class Rao extends TestBase {
     @Tag("web")
     @Owner("AlexDonskov")
     @DisplayName("Главная страница")
-    void homePageTest(){
+    void homePageTest() {
         step("Открыть главную страницу", () ->
                 mainPage.openPage());
         step("Проверить наличие надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО в хедере", () ->
@@ -25,7 +25,7 @@ public class Rao extends TestBase {
     @Tag("web")
     @Owner("AlexDonskov")
     @DisplayName("Переход в раздел Новости")
-    void newsRaoTest(){
+    void newsRaoTest() {
         step("Открыть главную страницу", () ->
                 mainPage.openPage());
         step("Нажать на кнопку Каталог", () ->
@@ -38,7 +38,7 @@ public class Rao extends TestBase {
     @Tag("web")
     @Owner("AlexDonskov")
     @DisplayName("Поиск в реестре по автору и произведению")
-    void russianRegistrySearchWorkAuthorTest(){
+    void russianRegistrySearchWorkAuthorTest() {
         step("Открыть страницу Российского реестра произведений", () ->
                 ruRegistryPage.openPage());
         step("В поле Произведение ввести название произведения", () ->
@@ -55,7 +55,7 @@ public class Rao extends TestBase {
     @Tag("web")
     @Owner("AlexDonskov")
     @DisplayName("Поиск в реестре по произведению")
-    void russianRegistrySearchWorkTest(){
+    void russianRegistrySearchWorkTest() {
         step("Открыть страницу Российского реестра произведений", () ->
                 ruRegistryPage.openPage());
         step("В поле Произведение ввести название произведения", () ->
@@ -70,7 +70,7 @@ public class Rao extends TestBase {
     @Tag("web")
     @Owner("AlexDonskov")
     @DisplayName("Поиск в реестре по автору")
-    void russianRegistrySearchAuthorTest(){
+    void russianRegistrySearchAuthorTest() {
         step("Открыть страницу Российского реестра произведений", () ->
                 ruRegistryPage.openPage());
         step("В поле Автор ввести ФИО фвтора", () ->

@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class RuRegistryPage{
+public class RuRegistryPage {
 
     private SelenideElement
             titlePage = $(".col-md-12"),
@@ -42,5 +42,4 @@ public class RuRegistryPage{
         results.shouldHave(text(value));
         return this;
     }
-
 }
