@@ -10,7 +10,7 @@ public class NewsPage {
     private SelenideElement
             result = $(".news-page");
 
-    public NewsPage checkNews(String value) {
+    public NewsPage checkForm(String value) {
         result.shouldHave(text(value));
         return this;
     }

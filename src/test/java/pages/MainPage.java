@@ -14,12 +14,12 @@ public class MainPage {
             submitnews = $(".menu-item-4955");
 
 
-    public MainPage openMainPage() {
+    public MainPage openPage() {
         open("https://www.rao.ru/");
         return this;
     }
 
-    public MainPage checkRao(String value) {
+    public MainPage checkForm(String value) {
         result.shouldHave(text(value));
         return this;
     }

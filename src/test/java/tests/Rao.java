@@ -14,11 +14,11 @@ public class Rao extends TestBase {
     @Tag("web")
     @Owner("AlexDonskov")
     @DisplayName("Главная страница")
-    void homePagePOTest(){
+    void homePageTest(){
         step("Открыть главную страницу", () ->
-                mainPage.openMainPage());
+                mainPage.openPage());
         step("Проверить наличие надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО в хедере", () ->
-                mainPage.checkRao(logo));
+                mainPage.checkForm(logo));
     }
 
     @Test
@@ -27,11 +27,11 @@ public class Rao extends TestBase {
     @DisplayName("Переход в раздел Новости")
     void newsRaoTest(){
         step("Открыть главную страницу", () ->
-                mainPage.openMainPage());
+                mainPage.openPage());
         step("Нажать на кнопку Каталог", () ->
                 mainPage.submitNews());
         step("Проверить что нахожусь на странице Новости", () ->
-                newsPage.checkNews(news));
+                newsPage.checkForm(news));
     }
 
     @Test
