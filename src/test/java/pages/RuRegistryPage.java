@@ -13,7 +13,7 @@ public class RuRegistryPage{
             titlePage = $(".col-md-12"),
             setWork = $("[name=work]"),
             setAuthor = $("[name=author]"),
-            submitClick = $(".search-reestr"),
+            clickSubmit = $(".search-reestr"),
             results = $(".search-result-reestr");
 
 
@@ -33,8 +33,8 @@ public class RuRegistryPage{
         return this;
     }
 
-    public RuRegistryPage submitClick() {
-        submitClick.click();
+    public RuRegistryPage clickSubmit() {
+        clickSubmit.click();
         return this;
     }
 

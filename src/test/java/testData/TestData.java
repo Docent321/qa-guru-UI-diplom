@@ -1,6 +1,5 @@
 package testData;
 
-
 public class TestData {
     public static String
             logo = "РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО",

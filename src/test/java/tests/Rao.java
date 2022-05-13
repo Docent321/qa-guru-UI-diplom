@@ -46,7 +46,7 @@ public class Rao extends TestBase {
         step("В поле Автор ввести ФИО фвтора", () ->
                 ruRegistryPage.setAuthor(author));
         step("Нажать кнопку Поиск", () ->
-                ruRegistryPage.submitClick());
+                ruRegistryPage.clickSubmit());
         step("Проверить нахождение произведения в результатах поиска", () ->
                 ruRegistryPage.checkForm(value));
     }
@@ -61,7 +61,7 @@ public class Rao extends TestBase {
         step("В поле Произведение ввести название произведения", () ->
                 ruRegistryPage.setWork(work1));
         step("Нажать кнопку Поиск", () ->
-                ruRegistryPage.submitClick());
+                ruRegistryPage.clickSubmit());
         step("Проверить нахождение произведения в результатах поиска", () ->
                 ruRegistryPage.checkForm(work1));
     }
@@ -76,7 +76,7 @@ public class Rao extends TestBase {
         step("В поле Автор ввести ФИО фвтора", () ->
                 ruRegistryPage.setAuthor(author1));
         step("Нажать кнопку Поиск", () ->
-                ruRegistryPage.submitClick());
+                ruRegistryPage.clickSubmit());
         step("Проверить нахождение Автора в результатах поиска", () ->
                 ruRegistryPage.checkForm(author1));
     }
