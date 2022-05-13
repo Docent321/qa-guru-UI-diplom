@@ -49,8 +49,8 @@ gradle clean test -Dtype=local
 Удаленный запуск:
 ```
 clean
-test
--DremoteUrl=https://user1:1234@selenoid.autotests.cloud/wd/hub/
+${TASK}
+-DremoteUrl=https://${USER}:${PASSWORD}@selenoid.autotests.cloud/wd/hub/
 -DbrowserName=chrome
 -DbrowserSize=1920x1080
 -DbrowserVersion=100

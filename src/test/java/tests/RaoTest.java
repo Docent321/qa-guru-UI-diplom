@@ -8,7 +8,6 @@ import pages.MainPage;
 import pages.NewsPage;
 import pages.RuRegistryPage;
 
-import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static testData.TestData.*;
 
