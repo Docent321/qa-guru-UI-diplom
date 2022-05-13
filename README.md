@@ -51,6 +51,7 @@ gradle clean test -Dtype=local
 clean
 ${TASK}
 -DremoteUrl=https://${USER}:${PASSWORD}@selenoid.autotests.cloud/wd/hub/
+-DbaseURL=${BASEURL}
 -DbrowserName=chrome
 -DbrowserSize=1920x1080
 -DbrowserVersion=100
