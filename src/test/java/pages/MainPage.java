@@ -14,7 +14,7 @@ public class MainPage {
             submitnews = $(".menu-item-4955");
 
     public MainPage openPage() {
-        open("https://www.rao.ru/");
+        open("baseURL");
         return this;
     }
 

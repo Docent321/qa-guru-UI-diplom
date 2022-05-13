@@ -18,7 +18,7 @@ public class RuRegistryPage {
 
 
     public RuRegistryPage openPage() {
-        open("https://rao.ru/information/reestry/reestr-proizvedenij-rossijskih-pravoobladatelej/");
+        open("information/reestry/reestr-proizvedenij-rossijskih-pravoobladatelej/");
         titlePage.shouldHave(text("Реестр произведений российских правообладателей"));
         return this;
     }
