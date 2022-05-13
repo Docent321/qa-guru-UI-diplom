@@ -28,14 +28,14 @@
 </p>
 
 ## :notebook_with_decorative_cover: Реализованные проверки
-- Проверка наличия надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО
+- Проверка наличия надписи РОССИЙСКОЕ АВТОРСКОЕ ОБЩЕСТВО на главной странице
 - Переход в раздел Новости
 - Поиск в реестре по автору и произведению
 - Поиск в реестре по произведению
 - Поиск в реестре по автору
 
 ## :electric_plug: Сборка в Jenkins
-### <a target="_blank" https://jenkins.autotests.cloud/job/011-AlexDonskov-ui-diplom/</a>
+### <a target="_blank"> https://jenkins.autotests.cloud/job/011-AlexDonskov-ui-diplom/ </a>
 <p align="center">
 <img title="Jenkins Dashboard" src="images/screenshots/jenkins-dashboard.png">
 </p>  
