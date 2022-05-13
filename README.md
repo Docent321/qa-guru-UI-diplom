@@ -1,5 +1,5 @@
 # Проект по автоматизации тестирования сайта Российского Авторского общества
-## <a target="_blank" href="https://www.ozon.ru/">Веб сайт https://rao.ru/</a>
+## <a target="_blank" href="https://rao.ru/">Веб сайт https://rao.ru/</a>
 
 ## :floppy_disk: Содержание:
 

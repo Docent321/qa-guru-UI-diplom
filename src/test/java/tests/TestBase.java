@@ -6,12 +6,18 @@ import helpers.DriverConfig;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import pages.MainPage;
+import pages.NewsPage;
+import pages.RuRegistryPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class TestBase {
+
+    RuRegistryPage ruRegistryPage = new RuRegistryPage();
+    MainPage mainPage = new MainPage();
+    NewsPage newsPage = new NewsPage();
 
     @BeforeAll
     static void setup() {
@@ -25,7 +31,6 @@ public class TestBase {
         AllureAttachments.pageSource();
         AllureAttachments.browserConsoleLogs();
         AllureAttachments.addVideo();
-        sleep(5000);
         closeWebDriver();
     }
 }
