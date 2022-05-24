@@ -25,7 +25,6 @@ public class MainPage {
 
     public MainPage submitNews() {
         submitnews.click();
-        ;
         return this;
     }
 }
